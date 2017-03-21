@@ -40,10 +40,10 @@ public class Node {
 	public boolean isBinaryTree() {
 		boolean resp = true;
 
-		if (left != null && left.data > data)
+		if (left != null && left.data >= data)
 			resp = false;
 
-		if (right != null && right.data < data)
+		if (right != null && right.data <= data)
 			resp = false;
 
 		return resp;
