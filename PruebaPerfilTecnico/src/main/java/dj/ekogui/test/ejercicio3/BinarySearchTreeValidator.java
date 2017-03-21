@@ -7,15 +7,16 @@ public class BinarySearchTreeValidator {
 		if (node.hasChilds()) {
 			if (node.hasLeftChild())
 				if (node.isBinaryTree())
-					checkBST(node.left);
+					resp = checkBST(node.left);
 				else
-					return false;
+					resp = false;
 
-			if (node.hasRightChild())
-				if (node.isBinaryTree())
-					checkBST(node.right);
-				else
-					return false;
+			if (resp)
+				if (node.hasRightChild())
+					if (node.isBinaryTree())
+						resp = checkBST(node.right);
+					else
+						resp = false;
 		}
 
 		return resp;
